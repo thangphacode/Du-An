@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bg_ac_login">#4EA57E</color>
+    <color name="shore">#FB9570</color>
+    <color name="facebook">#3B5995</color>
+    <color name="blue_theme">#302e93</color>
+    <color name="yellow_theme">#fdf001</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="indication_fill_color">#e27739</color>
+    <color name="indication_page_color">#595959</color>
+    <color name="home_bg">#d9d9d9</color>
+    <color name="black_alpha30">#20000000</color>
+    <color name="side_menu_bg">#124c75</color>
+    <color name="gray">#a9a9a9</color>
+    <color name="violet">#a31f64</color>
+    <color name="light_blue">#79d5fb </color>
+    <color name="dark_blue">#0473bc </color>
+    <color name="ultra_dark_gray">#0473bc</color>
+    <color name="bg_text_logo">#8BC34A</color>
+</resources>
