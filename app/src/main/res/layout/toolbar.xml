@@ -9,7 +9,6 @@
     android:gravity="top|start"
     android:minHeight="?android:attr/actionBarSize"
     app:layout_scrollFlags="scroll|enterAlways">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,15 +16,16 @@
 
         <ImageView
             android:id="@+id/imgMenu"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/ic_menu_black_24dp"
             android:visibility="visible" />
 
         <TextView
+
             android:text="Hình Nền"
             android:id="@+id/txtToolbarTitle"
             android:layout_width="180dp"
@@ -36,17 +36,16 @@
             android:lines="1"
             android:maxLines="1"
             android:maxWidth="180dp"
-            android:paddingBottom="10dp"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/imgSearch"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:src="@drawable/ic_search_black_24dp"
             android:visibility="visible" />
 

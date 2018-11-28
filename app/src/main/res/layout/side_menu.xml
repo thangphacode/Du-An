@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
-    android:background="#1E2C4F"
+    android:background="#2c4178"
     android:orientation="vertical">
 
     <LinearLayout
@@ -20,11 +20,15 @@
             android:layout_marginTop="30dp"
             android:orientation="vertical">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:src="@drawable/logo"
+                app:civ_border_width="3dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/logo" />
+                app:civ_border_color="@color/white"/>
 
             <TextView
                 android:id="@+id/tvName"
