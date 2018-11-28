@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.vinhnv.duan1.R;
 import com.vinhnv.duan1.entity.ImagesResponse;
 
@@ -39,7 +40,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(context)
-                .inflate(R.layout.item_category, parent, false);
+                .inflate(R.layout.item_images, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -47,7 +48,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         Log.d("size", listItem.size() + "");
         final ImagesResponse.ItemsBean entity = listItem.get(position);
-//        Glide.with(context).load(entity.getSource_link()).error(R.mipmap.ic_launcher).into(holder.imgView);
+        Glide.with(context).load(entity.getSource_link()).error(R.drawable.logo).into(holder.imgView);
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
