@@ -18,7 +18,21 @@
     <color name="gray">#a9a9a9</color>
     <color name="violet">#a31f64</color>
     <color name="light_blue">#79d5fb </color>
-    <color name="dark_blue">#0473bc </color>
     <color name="ultra_dark_gray">#0473bc</color>
     <color name="bg_text_logo">#8BC34A</color>
+
+    <color name="EEEEEE">#EEEEEE</color>
+    <color name="red">#FF3333</color>
+    <color name="primary">#E43F3F</color>
+    <color name="primary_dark">#E12929</color>
+    <color name="primary_darker">#CC1D1D</color>
+    <color name="accent">#FFFFFF</color>
+
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
 </resources>
