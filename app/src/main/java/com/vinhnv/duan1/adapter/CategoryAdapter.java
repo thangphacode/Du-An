@@ -2,6 +2,7 @@ package com.vinhnv.duan1.adapter;
 
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
     private Context context;
+    private CallBackCategory mCallBack;
     private ArrayList<CategoryResponse.ItemsBean> listItem;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -45,7 +47,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        Log.d("size", listItem.size() + "");
         final CategoryResponse.ItemsBean entity = listItem.get(position);
 
         holder.tvCategoryName.setText(entity.getTitle());
@@ -53,7 +54,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mCallBack.clickCategoryId(entity.getId(), entity.getTitle());
             }
         });
     }
@@ -61,5 +62,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @Override
     public int getItemCount() {
         return listItem.size();
+    }
+
+
+    public interface CallBackCategory{
+        void clickCategoryId(int categoryId, String title);
+
+    }
+
+    public void setOnCategoryClickedListener(CallBackCategory mCallback) {
+        this.mCallBack = mCallback;
     }
 }

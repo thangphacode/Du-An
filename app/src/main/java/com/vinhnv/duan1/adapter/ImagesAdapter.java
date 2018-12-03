@@ -3,6 +3,7 @@ package com.vinhnv.duan1.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,9 +12,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.vinhnv.duan1.DetailActivity;
 import com.vinhnv.duan1.R;
 import com.vinhnv.duan1.entity.ImagesResponse;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -46,13 +50,21 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        Log.d("size", listItem.size() + "");
+
+
         final ImagesResponse.ItemsBean entity = listItem.get(position);
-        Glide.with(context).load(entity.getSource_link()).error(R.drawable.logo).into(holder.imgView);
+
+        Log.d("size", entity.getSource_link() + "");
+        String imageLink = entity.getVariations().getPreview_small().getUrl();
+        Glide.with(context).load(imageLink).error(R.drawable.logo).into(holder.imgView);
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent= new Intent(context, DetailActivity.class);
+                Gson gson = new Gson();
+                String myJson = gson.toJson(entity);
+                intent.putExtra("detail", myJson);
+                context.startActivity(intent);
             }
         });
     }
