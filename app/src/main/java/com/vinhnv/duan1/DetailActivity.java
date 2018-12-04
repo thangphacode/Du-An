@@ -1,13 +1,15 @@
 package com.vinhnv.duan1;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.nfc.Tag;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.os.Environment;
+import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -17,15 +19,20 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
 import com.vinhnv.duan1.entity.ImagesResponse;
 
-import java.util.ArrayList;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
-import javax.sql.DataSource;
+public class DetailActivity extends AppCompatActivity  {
 
-public class DetailActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private ImageView imgBack;
@@ -39,6 +46,7 @@ public class DetailActivity extends AppCompatActivity {
     private FloatingActionButton fap;
 
     private ProgressDialog progDialog = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +54,8 @@ public class DetailActivity extends AppCompatActivity {
         Gson gson = new Gson();
         ImagesResponse.ItemsBean imagesResponse = gson.fromJson(getIntent().getStringExtra("detail"), ImagesResponse.ItemsBean.class);
         initControler(imagesResponse);
+
+
     }
 
     public void initControler(ImagesResponse.ItemsBean imagesResponse) {
@@ -59,7 +69,7 @@ public class DetailActivity extends AppCompatActivity {
         imgDetail = findViewById(R.id.imgDetail);
         fap = findViewById(R.id.fab);
         txTitle.setText(imagesResponse.getAuthor());
-        String imageLink = imagesResponse.getVariations().getAdapted().getUrl();
+        final String imageLink = imagesResponse.getVariations().getAdapted().getUrl();
         Glide.with(this)
                 .load(imageLink)
                .listener(new RequestListener<String, GlideDrawable>() {
@@ -112,4 +122,6 @@ public class DetailActivity extends AppCompatActivity {
             progDialog.dismiss();
         }
     }
+
+
 }

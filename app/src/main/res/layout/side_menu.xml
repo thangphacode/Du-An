@@ -20,14 +20,12 @@
             android:layout_marginTop="30dp"
             android:orientation="vertical">
 
-
-
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="86dp"
                 android:layout_height="86dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/logo2"
                 app:civ_border_width="3dp"
                 android:layout_gravity="center_horizontal"
                 app:civ_border_color="@color/white"/>
@@ -39,7 +37,7 @@
                 android:layout_gravity="center"
                 android:paddingLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Ung Dụng Hình Anh"
+                android:text="Ứng dụng hình ảnh"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
             <View

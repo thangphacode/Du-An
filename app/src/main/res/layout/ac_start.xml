@@ -20,7 +20,7 @@
         android:layout_gravity="center"
         android:paddingLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="Ung Dụng Hình Anh"
+        android:text="Ứng dụng hình ảnh"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
