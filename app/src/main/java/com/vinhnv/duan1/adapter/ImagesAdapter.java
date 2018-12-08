@@ -54,7 +54,6 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.MyViewHold
 
         final ImagesResponse.ItemsBean entity = listItem.get(position);
 
-        Log.d("size", entity.getSource_link() + "");
         String imageLink = entity.getVariations().getPreview_small().getUrl();
         Glide.with(context).load(imageLink).error(R.drawable.logo).into(holder.imgView);
         holder.view.setOnClickListener(new View.OnClickListener() {

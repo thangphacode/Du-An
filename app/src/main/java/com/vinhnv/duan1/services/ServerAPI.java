@@ -20,6 +20,11 @@ public interface ServerAPI {
                                               @Query("screen[height]") int height,
                                               @Query("category_id") int categoryId,
                                               @Query("sort") String sort);
+    @GET("/images")
+    Call<ImagesResponse> searchImages(@Query("query") String textSearch,
+                                        @Query("screen[width]") int width,
+                                        @Query("screen[height]") int height,
+                                        @Query("sort") String sort);
 }
 
 

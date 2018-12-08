@@ -11,6 +11,7 @@
         android:id="@+id/imgView"
         android:layout_width="match_parent"
         android:scaleType="centerCrop"
+        android:padding="2px"
         android:layout_height="150dp"/>
 
 </LinearLayout>

@@ -124,14 +124,15 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.C
 
     private void initToolbar() {
         imgMenu = findViewById(R.id.imgMenu);
-//        imgSearch = v.findViewById(R.id.imgSearch);
-//
-//        imgSearch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        imgSearch = findViewById(R.id.imgSearch);
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,7 +145,6 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.C
         });
         tb = findViewById(R.id.txtToolbarTitle);
         tb.setText("Hình Nền");
-
     }
 
     public void getListImageFromCategory(int idCategory) {
@@ -159,12 +159,13 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.C
 
                 } else {
                     MyUtlis.showToast(MainActivity.this, "Get caterogy lỗi");
+                    dismissProgressDialog();
                 }
             }
 
             @Override
             public void onFailure(Call<ImagesResponse> call, Throwable t) {
-                Log.e("dulieutrave", t.toString() + "");
+                dismissProgressDialog();
             }
         });
     }
@@ -173,9 +174,6 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.C
         rcImages.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
         imagesAdapter = new ImagesAdapter(MainActivity.this, listImages);
         rcImages.setAdapter(imagesAdapter);
-        for (int i = 0; i < listImages.size(); i++) {
-            Log.d("Get caterogy lỗi 123", listImages.get(i).toString());
-        }
         imagesAdapter.notifyDataSetChanged();
         dismissProgressDialog();
     }
