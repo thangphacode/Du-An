@@ -76,22 +76,22 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.C
         initSideMenu();
         initToolbar();
         getCategory();
-//        imgLogin();
+       imgLogin();
         toolbar = findViewById(R.id.toolbar);
         rcImages = findViewById(R.id.rcImages);
         rcImages.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
     }
-//
-//    private void imgLogin() {
-//        imageLogin = findViewById(R.id.imgLogin);
-//        imageLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
+
+   private void imgLogin() {
+       imageLogin = findViewById(R.id.imgLogin);
+       imageLogin.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+               startActivity(intent);
+           }
+       });
+   }
 
 
     private void getCategory() {
